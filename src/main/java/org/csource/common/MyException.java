@@ -15,10 +15,15 @@ package org.csource.common;
  * @version Version 1.0
  */
 public class MyException extends Exception {
-  public MyException() {
-  }
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-  public MyException(String message) {
-    super(message);
-  }
+	public MyException() {
+	}
+
+	public MyException(String message) {
+		super(message);
+	}
 }

@@ -19,7 +19,7 @@ import java.util.Hashtable;
  * @version Version 1.0
  */
 public class IniFileReader {
-  private Hashtable paramTable;
+  private Hashtable<String, Object> paramTable;
   private String conf_filename;
 
   /**
@@ -163,14 +163,14 @@ public class IniFileReader {
   }
 
   private void readToParamTable(InputStream in) throws IOException {
-    this.paramTable = new Hashtable();
+    this.paramTable = new Hashtable<String, Object>();
     if (in == null) return;
     String line;
     String[] parts;
     String name;
     String value;
     Object obj;
-    ArrayList valueList;
+    ArrayList<Object> valueList;
     InputStreamReader inReader = null;
     BufferedReader bufferedReader = null;
     try {
@@ -191,7 +191,7 @@ public class IniFileReader {
         if (obj == null) {
           this.paramTable.put(name, value);
         } else if (obj instanceof String) {
-          valueList = new ArrayList();
+          valueList = new ArrayList<Object>();
           valueList.add(obj);
           valueList.add(value);
           this.paramTable.put(name, valueList);

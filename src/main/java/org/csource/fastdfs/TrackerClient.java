@@ -483,12 +483,7 @@ public class TrackerClient {
    */
   public StructGroupStat[] listGroups(TrackerServer trackerServer) throws IOException {
     byte[] header;
-    String ip_addr;
-    int port;
-    byte cmd;
-    int out_len;
     boolean bNewConnection;
-    byte store_path;
     Socket trackerSocket;
 
     if (trackerServer == null) {
